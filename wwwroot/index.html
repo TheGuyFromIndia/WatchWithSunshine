@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Watch Together - Demo</title>
+  </head>
+  <body>
+    <h1>Watch Together - Demo</h1>
+
+    <label>
+      Role:
+      <select id="role">
+        <option value="leader">Leader</option>
+        <option value="follower">Follower</option>
+      </select>
+    </label>
+
+    <div>
+      <video id="player" controls autoplay style="width:90%;max-width:900px"></video>
+    </div>
+    <div>
+      <button id="startBtn" style="margin-top:8px">Start / Unmute</button>
+    </div>
+  <div id="status" style="margin-top:8px;color:#333;background:#f1f1f1;padding:8px;max-width:900px"></div>
+
+    <p>
+      Set the video source by placing an HLS folder under <code>/media/movie1</code>
+      and loading <code>/media/movie1/index.m3u8</code>.
+    </p>
+
+  <!-- SignalR client - removed integrity attribute because CDN integrity failed locally -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.9/signalr.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- HLS.js fallback for browsers without native HLS support (Chrome desktop) -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.2/dist/hls.min.js"></script>
+  <script src="/player.js"></script>
+  </body>
+</html>
